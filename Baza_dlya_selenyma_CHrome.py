@@ -8,7 +8,7 @@ import math
 def logi_link():
 
     try:
-        link = "http://suninjuly.github.io/registration2.html"
+        link = "http://suninjuly.github.io/registration1.html"
         browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         browser.get(link)
         labels = browser.find_elements_by_tag_name('label')  # Список лэйблов над текстовыми полями
@@ -17,8 +17,6 @@ def logi_link():
         for i, label in enumerate(labels):  # Если последний символ
             if label.text[-1] == '*':  # лейбла над текстовым полем равен "*",
                 inputs[i].send_keys('Обязалово!')  # то в поле ввода печатаем "Обязалово!"
-        print(labels)
-        print(inputs)
         #
         # Отправляем заполненную форму
         button = browser.find_element_by_css_selector("button.btn")
